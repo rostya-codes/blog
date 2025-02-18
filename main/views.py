@@ -32,9 +32,11 @@ class PostUpdateView(UpdateView):
     template_name = 'main/post_form.html'
     fields = ('title', 'content')
     success_url = reverse_lazy('main:index')
+    pk_url_kwarg = 'post_id'  # Явно указываем, что URL-параметр post_id — это primary key
 
 # Удаление поста
 class PostDeleteView(DeleteView):
     model = Post
     template_name = 'main/post_confirm_delete.html'
     success_url = reverse_lazy('main:index')  # Перенаправление после удаления
+    pk_url_kwarg = 'post_id'

@@ -55,6 +55,9 @@
 							<div class="content">
 								<p>{{ post.content }}</p>
 							</div>
+							<a href="{% url 'main:post_update' post_id=post.id %}">Edit post</a>
+							<br>
+							<a href="{% url 'main:post_delete' post_id=post.id %}">Delete post</a>
 						</div>
 					</section>
 
