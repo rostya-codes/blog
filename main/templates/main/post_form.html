@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{% if object %}Редактировать{% else %}Создать{% endif %} пост</title>
+</head>
+<body>
+    <h1>{% if object %}Редактировать{% else %}Создать{% endif %} пост</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Сохранить</button>
+    </form>
+    <a href="{% url 'main:index' %}">Назад</a>
+</body>
+</html>
